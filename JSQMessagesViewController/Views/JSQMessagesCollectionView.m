@@ -142,7 +142,7 @@
     }
 
     [self.delegate collectionView:self
-            didTapAvatarImageView:cell.agstImageView
+              didTapAGSTImageView:cell.agstImageView
                       atIndexPath:indexPath];
 }
 
