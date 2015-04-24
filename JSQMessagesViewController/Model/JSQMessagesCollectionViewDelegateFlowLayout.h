@@ -76,6 +76,10 @@
 - (CGFloat)collectionView:(JSQMessagesCollectionView *)collectionView
                    layout:(JSQMessagesCollectionViewFlowLayout *)collectionViewLayout heightForCellBottomLabelAtIndexPath:(NSIndexPath *)indexPath;
 
+- (void)collectionView:(JSQMessagesCollectionView *)collectionView
+   didTapAGSTImageView:(UIImageView *)agstImageView
+           atIndexPath:(NSIndexPath *)indexPath;
+
 /**
  *  Notifies the delegate that the avatar image view at the specified indexPath did receive a tap event.
  *
