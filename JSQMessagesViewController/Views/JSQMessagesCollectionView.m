@@ -135,6 +135,17 @@
 
 #pragma mark - Messages collection view cell delegate
 
+- (void)messagesCollectionViewCellDidTapAGSTImageView:(JSQMessagesCollectionViewCell *)cell {
+    NSIndexPath *indexPath = [self indexPathForCell:cell];
+    if (indexPath == nil) {
+        return;
+    }
+
+    [self.delegate collectionView:self
+            didTapAvatarImageView:cell.agstImageView
+                      atIndexPath:indexPath];
+}
+
 - (void)messagesCollectionViewCellDidTapAvatar:(JSQMessagesCollectionViewCell *)cell
 {
     NSIndexPath *indexPath = [self indexPathForCell:cell];
