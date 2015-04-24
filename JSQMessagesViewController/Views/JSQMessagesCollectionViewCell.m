@@ -59,6 +59,7 @@
 @property (assign, nonatomic) CGSize avatarViewSize;
 
 @property (weak, nonatomic, readwrite) UITapGestureRecognizer *tapGestureRecognizer;
+@property (weak, nonatomic, readwrite) UITapGestureRecognizer *agstImageViewTapGestureRecognizer;
 
 - (void)jsq_handleTapGesture:(UITapGestureRecognizer *)tap;
 
@@ -116,6 +117,11 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
+
+    UITapGestureRecognizer *agstTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                              action:@selector(didTapAGSTImageView:)];
+    [self addGestureRecognizer:agstTap];
+    self.agstImageViewTapGestureRecognizer = agstTap;
 }
 
 - (void)dealloc
@@ -134,6 +140,9 @@
 
     [_tapGestureRecognizer removeTarget:nil action:NULL];
     _tapGestureRecognizer = nil;
+
+    [_agstImageViewTapGestureRecognizer removeTarget:nil action:NULL];
+    _agstImageViewTapGestureRecognizer = nil;
 }
 
 #pragma mark - Collection view cell
@@ -155,6 +164,7 @@
 
     [self.agstImageView cancelImageRequestOperation];
     self.agstImageView.image = nil;
+    self.agstImageView.hidden = YES;
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
@@ -330,6 +340,11 @@
     else {
         [self.delegate messagesCollectionViewCellDidTapCell:self atPosition:touchPt];
     }
+}
+
+- (void)didTapAGSTImageView:(UITapGestureRecognizer *)tap {
+    if ([self.delegate respondsToSelector:@selector(messagesCollectionViewCellDidTapAGSTImageView:)])
+        [self.delegate messagesCollectionViewCellDidTapAGSTImageView:self];
 }
 
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch

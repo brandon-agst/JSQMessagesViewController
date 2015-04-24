@@ -31,6 +31,8 @@
 
 @required
 
+- (void)messagesCollectionViewCellDidTapAGSTImageView:(JSQMessagesCollectionViewCell *)cell;
+
 /**
  *  Tells the delegate that the avatarImageView of the cell has been tapped.
  *
