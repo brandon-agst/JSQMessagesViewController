@@ -75,6 +75,8 @@
  */
 @interface JSQMessagesCollectionViewCell : UICollectionViewCell
 
+@property (nonatomic, weak) IBOutlet UIImageView *agstImageView;
+
 /**
  *  The object that acts as the delegate for the cell.
  */

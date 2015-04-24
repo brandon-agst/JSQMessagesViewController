@@ -22,6 +22,7 @@
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 #import "JSQMessagesCollectionViewLayoutAttributes.h"
 
+#import "UIImageView+AFNetworking.h"
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
 
@@ -151,6 +152,9 @@
 
     self.avatarImageView.image = nil;
     self.avatarImageView.highlightedImage = nil;
+
+    [self.agstImageView cancelImageRequestOperation];
+    self.agstImageView.image = nil;
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
