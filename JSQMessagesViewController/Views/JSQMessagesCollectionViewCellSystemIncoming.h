@@ -8,6 +8,10 @@
 
 #import "JSQMessagesCollectionViewCell.h"
 
+@class NIAttributedLabel;
+
 @interface JSQMessagesCollectionViewCellSystemIncoming : JSQMessagesCollectionViewCell
+
+@property (nonatomic, weak) IBOutlet NIAttributedLabel *systemMessageLabel;
 
 @end
