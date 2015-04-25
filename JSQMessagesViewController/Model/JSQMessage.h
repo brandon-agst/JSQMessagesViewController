@@ -29,6 +29,8 @@
  */
 @interface JSQMessage : NSObject <JSQMessageData, NSCoding, NSCopying>
 
+@property (assign, nonatomic, readonly) BOOL isSystemMessage;
+
 /**
  *  Returns the string identifier that uniquely identifies the user who sent the message. 
  */
