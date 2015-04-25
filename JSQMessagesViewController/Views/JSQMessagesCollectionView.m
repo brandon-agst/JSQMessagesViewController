@@ -68,11 +68,11 @@
 
     UINib *nib = [UINib nibWithNibName:NSStringFromClass([JSQMessagesCollectionViewCellSystemIncoming class]) bundle:[NSBundle bundleForClass:[self class]]];
     [self registerNib:nib
-          forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming systemCellReuseIdentifier]];
+          forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellSystemIncoming systemCellReuseIdentifier]];
 
     nib = [UINib nibWithNibName:NSStringFromClass([JSQMessagesCollectionViewCellSystemOutgoing class]) bundle:[NSBundle bundleForClass:[self class]]];
     [self registerNib:nib
-          forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing systemCellReuseIdentifier]];
+          forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellSystemOutgoing systemCellReuseIdentifier]];
 
     [self registerNib:[JSQMessagesTypingIndicatorFooterView nib]
           forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
