@@ -66,10 +66,12 @@
     [self registerNib:[JSQMessagesCollectionViewCellOutgoing nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing mediaCellReuseIdentifier]];
 
-    [self registerNib:[JSQMessagesCollectionViewCellSystemIncoming nib]
+    UINib *nib = [UINib nibWithNibName:NSStringFromClass([JSQMessagesCollectionViewCellSystemIncoming class]) bundle:[NSBundle bundleForClass:[self class]]];
+    [self registerNib:nib
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming systemCellReuseIdentifier]];
 
-    [self registerNib:[JSQMessagesCollectionViewCellSystemOutgoing nib]
+    nib = [UINib nibWithNibName:NSStringFromClass([JSQMessagesCollectionViewCellSystemOutgoing class]) bundle:[NSBundle bundleForClass:[self class]]];
+    [self registerNib:nib
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing systemCellReuseIdentifier]];
 
     [self registerNib:[JSQMessagesTypingIndicatorFooterView nib]
