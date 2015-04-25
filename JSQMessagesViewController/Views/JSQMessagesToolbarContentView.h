@@ -25,7 +25,8 @@
  *  A constant value representing the default spacing to use for the left and right edges 
  *  of the toolbar content view.
  */
-FOUNDATION_EXPORT const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
+FOUNDATION_EXPORT const CGFloat kJSQMessagesToolbarContentViewLeftHorizontalSpacingDefault;
+FOUNDATION_EXPORT const CGFloat kJSQMessagesToolbarContentViewRightHorizontalSpacingDefault;
 
 /**
  *  A `JSQMessagesToolbarContentView` represents the content displayed in a `JSQMessagesInputToolbar`.

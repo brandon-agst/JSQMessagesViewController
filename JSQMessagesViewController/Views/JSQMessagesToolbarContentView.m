@@ -20,7 +20,8 @@
 
 #import "UIView+JSQMessages.h"
 
-const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
+const CGFloat kJSQMessagesToolbarContentViewLeftHorizontalSpacingDefault = 8.0f;
+const CGFloat kJSQMessagesToolbarContentViewRightHorizontalSpacingDefault = 0.0f;
 
 
 @interface JSQMessagesToolbarContentView ()
@@ -58,8 +59,8 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
 
-    self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
-    self.rightHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
+    self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewLeftHorizontalSpacingDefault;
+    self.rightHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewRightHorizontalSpacingDefault;
 
     self.backgroundColor = [UIColor clearColor];
 }
@@ -101,7 +102,7 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     }
 
     self.leftBarButtonContainerView.hidden = NO;
-    self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
+    self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewLeftHorizontalSpacingDefault;
     self.leftBarButtonItemWidth = CGRectGetWidth(leftBarButtonItem.frame);
 
     [leftBarButtonItem setTranslatesAutoresizingMaskIntoConstraints:NO];
@@ -138,7 +139,7 @@ const CGFloat kJSQMessagesToolbarContentViewHorizontalSpacingDefault = 8.0f;
     }
 
     self.rightBarButtonContainerView.hidden = NO;
-    self.rightHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewHorizontalSpacingDefault;
+    self.rightHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewRightHorizontalSpacingDefault;
     self.rightBarButtonItemWidth = CGRectGetWidth(rightBarButtonItem.frame);
 
     [rightBarButtonItem setTranslatesAutoresizingMaskIntoConstraints:NO];
