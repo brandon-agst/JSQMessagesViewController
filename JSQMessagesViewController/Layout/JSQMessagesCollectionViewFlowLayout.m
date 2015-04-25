@@ -441,8 +441,41 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     }
     
     CGSize finalSize = CGSizeZero;
-    
-    if ([messageItem isMediaMessage]) {
+
+    if ([messageItem isSystemMessage]) {
+//        // This is necessary because it appears Nimbus does not know how to handle the
+//        // compression and hugging priorities
+//        CGFloat widthReservedForOtherViews = (self.profileImageViewLSC.constant +
+//                                              self.profileImageView.bounds.size.width +
+//                                              self.profileImageViewTSC.constant +
+//                                              self.textContainerTSC.constant);
+//        CGFloat width = cellWidth - widthReservedForOtherViews;
+//        CGFloat height = [self.commentLabel sizeThatFits:CGSizeMake(width,
+//                                                                    CGFLOAT_MAX)].height;
+//        height = MAX(height, kMinimumCommentLabelHeight); // We want a minimum of 45.0f as height by design
+//        self.commentLabelHC.constant = height + 1.0f;
+//        
+//        // Width
+//        self.commentLabel.preferredMaxLayoutWidth = width;
+
+//        CGSize avatarSize = [self jsq_avatarSizeForIndexPath:indexPath];
+//
+//        //  from the cell xibs, there is a 2 point space between avatar and bubble
+//        CGFloat spacingBetweenAvatarAndBubble = 2.0f;
+//        CGFloat horizontalContainerInsets = self.messageBubbleTextViewTextContainerInsets.left + self.messageBubbleTextViewTextContainerInsets.right;
+//        CGFloat horizontalFrameInsets = self.messageBubbleTextViewFrameInsets.left + self.messageBubbleTextViewFrameInsets.right;
+//
+//        CGFloat horizontalInsetsTotal = horizontalContainerInsets + horizontalFrameInsets + spacingBetweenAvatarAndBubble;
+//        CGFloat maximumTextWidth = self.itemWidth - avatarSize.width - self.messageBubbleLeftRightMargin - horizontalInsetsTotal;
+//
+//        CGRect stringRect = [[messageItem text] boundingRectWithSize:CGSizeMake(maximumTextWidth, CGFLOAT_MAX)
+//                                                             options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+//                                                          attributes:@{ NSFontAttributeName : self.messageBubbleFont }
+//                                                             context:nil];
+
+        finalSize = CGSizeMake(150.0f, 150.0f);
+    }
+    else if ([messageItem isMediaMessage]) {
         finalSize = [[messageItem media] mediaViewDisplaySize];
     }
     else {

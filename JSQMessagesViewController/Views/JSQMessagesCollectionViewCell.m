@@ -88,6 +88,11 @@
     return [NSString stringWithFormat:@"%@_JSQMedia", NSStringFromClass([self class])];
 }
 
++ (NSString *)systemCellReuseIdentifier
+{
+    return [NSString stringWithFormat:@"%@_JSQSystem", NSStringFromClass([self class])];
+}
+
 #pragma mark - Initialization
 
 - (void)awakeFromNib

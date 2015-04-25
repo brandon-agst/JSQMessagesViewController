@@ -29,6 +29,9 @@
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
 
+#import "JSQMessagesCollectionViewCellSystemIncoming.h"
+#import "JSQMessagesCollectionViewCellSystemOutgoing.h"
+
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
 
@@ -136,9 +139,11 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
     self.outgoingCellIdentifier = [JSQMessagesCollectionViewCellOutgoing cellReuseIdentifier];
     self.outgoingMediaCellIdentifier = [JSQMessagesCollectionViewCellOutgoing mediaCellReuseIdentifier];
+    self.outgoingSystemCellIdentifier = [JSQMessagesCollectionViewCellSystemOutgoing systemCellReuseIdentifier];
 
     self.incomingCellIdentifier = [JSQMessagesCollectionViewCellIncoming cellReuseIdentifier];
     self.incomingMediaCellIdentifier = [JSQMessagesCollectionViewCellIncoming mediaCellReuseIdentifier];
+    self.incomingSystemCellIdentifier = [JSQMessagesCollectionViewCellSystemIncoming systemCellReuseIdentifier];
 
     self.showTypingIndicator = NO;
 
@@ -456,10 +461,14 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     NSParameterAssert(messageSenderId != nil);
 
     BOOL isOutgoingMessage = [messageSenderId isEqualToString:self.senderId];
+    BOOL isSystemMessage = [messageItem isSystemMessage];
     BOOL isMediaMessage = [messageItem isMediaMessage];
 
     NSString *cellIdentifier = nil;
-    if (isMediaMessage) {
+    if (isSystemMessage) {
+        cellIdentifier = isOutgoingMessage ? self.outgoingSystemCellIdentifier : self.incomingSystemCellIdentifier;
+    }
+    else if (isMediaMessage) {
         cellIdentifier = isOutgoingMessage ? self.outgoingMediaCellIdentifier : self.incomingMediaCellIdentifier;
     }
     else {

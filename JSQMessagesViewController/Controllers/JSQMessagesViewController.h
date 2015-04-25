@@ -105,6 +105,8 @@
  */
 @property (copy, nonatomic) NSString *outgoingMediaCellIdentifier;
 
+@property (copy, nonatomic) NSString *outgoingSystemCellIdentifier;
+
 /**
  *  The collection view cell identifier to use for dequeuing incoming message collection view cells 
  *  in the collectionView for text messages.
@@ -140,6 +142,8 @@
  *  including `collectionView:cellForItemAtIndexPath:`.
  */
 @property (copy, nonatomic) NSString *incomingMediaCellIdentifier;
+
+@property (copy, nonatomic) NSString *incomingSystemCellIdentifier;
 
 /**
  *  Specifies whether or not the view controller should show the typing indicator for an incoming message.

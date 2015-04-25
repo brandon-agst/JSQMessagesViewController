@@ -184,4 +184,6 @@
  */
 + (NSString *)mediaCellReuseIdentifier;
 
++ (NSString *)systemCellReuseIdentifier;
+
 @end

@@ -21,6 +21,8 @@
 #import "JSQMessagesCollectionViewFlowLayout.h"
 #import "JSQMessagesCollectionViewCellIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
+#import "JSQMessagesCollectionViewCellSystemIncoming.h"
+#import "JSQMessagesCollectionViewCellSystemOutgoing.h"
 
 #import "JSQMessagesTypingIndicatorFooterView.h"
 #import "JSQMessagesLoadEarlierHeaderView.h"
@@ -63,7 +65,13 @@
     
     [self registerNib:[JSQMessagesCollectionViewCellOutgoing nib]
           forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing mediaCellReuseIdentifier]];
-    
+
+    [self registerNib:[JSQMessagesCollectionViewCellSystemIncoming nib]
+          forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellIncoming systemCellReuseIdentifier]];
+
+    [self registerNib:[JSQMessagesCollectionViewCellSystemOutgoing nib]
+          forCellWithReuseIdentifier:[JSQMessagesCollectionViewCellOutgoing systemCellReuseIdentifier]];
+
     [self registerNib:[JSQMessagesTypingIndicatorFooterView nib]
           forSupplementaryViewOfKind:UICollectionElementKindSectionFooter
           withReuseIdentifier:[JSQMessagesTypingIndicatorFooterView footerReuseIdentifier]];
