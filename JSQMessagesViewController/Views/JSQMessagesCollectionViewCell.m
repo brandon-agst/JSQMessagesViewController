@@ -183,6 +183,10 @@
 
     JSQMessagesCollectionViewLayoutAttributes *customAttributes = (JSQMessagesCollectionViewLayoutAttributes *)layoutAttributes;
 
+    if (self.systemMessageLabel.font != customAttributes.messageBubbleFont) {
+        self.systemMessageLabel.font = customAttributes.messageBubbleFont;
+    }
+
     if (self.textView.font != customAttributes.messageBubbleFont) {
         self.textView.font = customAttributes.messageBubbleFont;
     }

@@ -21,6 +21,8 @@
 #import "JSQMessagesLabel.h"
 #import "JSQMessagesCellTextView.h"
 
+#import "NIAttributedLabel.h"
+
 @class JSQMessagesCollectionViewCell;
 
 /**
@@ -78,6 +80,8 @@
 @interface JSQMessagesCollectionViewCell : UICollectionViewCell
 
 @property (nonatomic, weak) IBOutlet UIImageView *agstImageView;
+
+@property (nonatomic, weak) IBOutlet NIAttributedLabel *systemMessageLabel;
 
 /**
  *  The object that acts as the delegate for the cell.
