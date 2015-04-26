@@ -225,6 +225,8 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
     [self jsq_configureMessagesViewController];
     [self jsq_registerForNotifications:YES];
+
+    self.collectionView.allowsSelection = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated
