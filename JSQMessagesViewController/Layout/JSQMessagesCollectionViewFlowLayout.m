@@ -558,13 +558,18 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 - (CGSize)jsq_avatarSizeForIndexPath:(NSIndexPath *)indexPath
 {
     id<JSQMessageData> messageData = [self.collectionView.dataSource collectionView:self.collectionView messageDataForItemAtIndexPath:indexPath];
-    NSString *messageSender = [messageData senderId];
-   
-    if ([messageSender isEqualToString:[self.collectionView.dataSource senderId]]) {
-        return self.outgoingAvatarViewSize;
+
+    if ([messageData isSystemMessage]) {
+        return CGSizeZero;
+    } else {
+        NSString *messageSender = [messageData senderId];
+       
+        if ([messageSender isEqualToString:[self.collectionView.dataSource senderId]]) {
+            return self.outgoingAvatarViewSize;
+        }
+        
+        return self.incomingAvatarViewSize;
     }
-    
-    return self.incomingAvatarViewSize;
 }
 
 #pragma mark - Spring behavior utilities
