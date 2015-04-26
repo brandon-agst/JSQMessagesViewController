@@ -48,13 +48,13 @@
     CGFloat cornerRadius = 6.0f;
     
     self.backgroundColor = [UIColor whiteColor];
-    self.layer.borderWidth = 0.5f;
-    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
-    self.layer.cornerRadius = cornerRadius;
-    
+//    self.layer.borderWidth = 0.5f;
+//    self.layer.borderColor = [UIColor lightGrayColor].CGColor;
+//    self.layer.cornerRadius = cornerRadius;
+
     self.scrollIndicatorInsets = UIEdgeInsetsMake(cornerRadius, 0.0f, cornerRadius, 0.0f);
     
-    self.textContainerInset = UIEdgeInsetsMake(4.0f, 2.0f, 4.0f, 2.0f);
+    self.textContainerInset = UIEdgeInsetsMake(10.0f, 2.0f, 4.0f, 2.0f);
     self.contentInset = UIEdgeInsetsMake(1.0f, 0.0f, 1.0f, 0.0f);
     
     self.scrollEnabled = YES;
@@ -62,6 +62,7 @@
     self.userInteractionEnabled = YES;
     
     self.font = [UIFont systemFontOfSize:16.0f];
+    self.tintColor = [UIColor blackColor];
     self.textColor = [UIColor blackColor];
     self.textAlignment = NSTextAlignmentNatural;
     
@@ -165,7 +166,7 @@
     if ([self.text length] == 0 && self.placeHolder) {
         [self.placeHolderTextColor set];
         
-        [self.placeHolder drawInRect:CGRectInset(rect, 7.0f, 5.0f)
+        [self.placeHolder drawInRect:CGRectInset(rect, 7.0f, 5.0f + 6.0f)
                       withAttributes:[self jsq_placeholderTextAttributes]];
     }
 }
