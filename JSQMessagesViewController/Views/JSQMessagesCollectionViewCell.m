@@ -173,6 +173,8 @@
     [self.agstImageView cancelImageRequestOperation];
     self.agstImageView.image = nil;
     self.agstImageView.hidden = YES;
+
+    self.systemMessageLabel.text = nil;
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes
@@ -362,12 +364,25 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     CGPoint touchPt = [touch locationInView:self];
 
+    if (self.systemMessageLabel.text.length) {
+        CGRect modifiedRect = [self convertRect:self.systemMessageLabel.frame
+                                       fromView:self.systemMessageLabel.superview];
+        if (CGRectContainsPoint(modifiedRect, touchPt))
+            return NO;
+    }
+
     if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {
-        return CGRectContainsPoint(self.messageBubbleContainerView.frame, touchPt);
+        CGRect modifiedRect = [self convertRect:self.messageBubbleContainerView.frame
+                                       fromView:self.messageBubbleContainerView.superview];
+        return CGRectContainsPoint(modifiedRect, touchPt);
     } else if (gestureRecognizer == self.tapGestureRecognizer) {
-        return !CGRectContainsPoint(self.agstImageView.frame, touchPt);
+        CGRect modifiedRect = [self convertRect:self.agstImageView.frame
+                                       fromView:self.agstImageView.superview];
+        return !CGRectContainsPoint(modifiedRect, touchPt);
     } else if (gestureRecognizer == self.agstImageViewTapGestureRecognizer) {
-        return CGRectContainsPoint(self.agstImageView.frame, touchPt);
+        CGRect modifiedRect = [self convertRect:self.agstImageView.frame
+                                       fromView:self.agstImageView.superview];
+        return CGRectContainsPoint(modifiedRect, touchPt);
     }
 
     return YES;
