@@ -27,7 +27,7 @@
 #import "UIDevice+JSQMessages.h"
 
 
-@interface JSQMessagesCollectionViewCell ()
+@interface JSQMessagesCollectionViewCell () <UIGestureRecognizerDelegate>
 
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *cellTopLabel;
 @property (weak, nonatomic) IBOutlet JSQMessagesLabel *messageBubbleTopLabel;
@@ -120,12 +120,15 @@
     self.cellBottomLabel.textColor = [UIColor lightGrayColor];
 
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(jsq_handleTapGesture:)];
+    tap.delegate = self;
     [self addGestureRecognizer:tap];
     self.tapGestureRecognizer = tap;
 
     UITapGestureRecognizer *agstTap = [[UITapGestureRecognizer alloc] initWithTarget:self
                                                                               action:@selector(didTapAGSTImageView:)];
-    [self addGestureRecognizer:agstTap];
+    agstTap.delegate = self;
+    self.agstImageView.userInteractionEnabled = YES;
+    [self.agstImageView addGestureRecognizer:agstTap];
     self.agstImageViewTapGestureRecognizer = agstTap;
 }
 
@@ -356,12 +359,15 @@
         [self.delegate messagesCollectionViewCellDidTapAGSTImageView:self];
 }
 
-- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch
-{
+- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     CGPoint touchPt = [touch locationInView:self];
 
     if ([gestureRecognizer isKindOfClass:[UILongPressGestureRecognizer class]]) {
         return CGRectContainsPoint(self.messageBubbleContainerView.frame, touchPt);
+    } else if (gestureRecognizer == self.tapGestureRecognizer) {
+        return !CGRectContainsPoint(self.agstImageView.frame, touchPt);
+    } else if (gestureRecognizer == self.agstImageViewTapGestureRecognizer) {
+        return CGRectContainsPoint(self.agstImageView.frame, touchPt);
     }
 
     return YES;
