@@ -443,21 +443,6 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
     CGSize finalSize = CGSizeZero;
 
     if ([messageItem isSystemMessage]) {
-//        // This is necessary because it appears Nimbus does not know how to handle the
-//        // compression and hugging priorities
-//        CGFloat widthReservedForOtherViews = (self.profileImageViewLSC.constant +
-//                                              self.profileImageView.bounds.size.width +
-//                                              self.profileImageViewTSC.constant +
-//                                              self.textContainerTSC.constant);
-//        CGFloat width = cellWidth - widthReservedForOtherViews;
-//        CGFloat height = [self.commentLabel sizeThatFits:CGSizeMake(width,
-//                                                                    CGFLOAT_MAX)].height;
-//        height = MAX(height, kMinimumCommentLabelHeight); // We want a minimum of 45.0f as height by design
-//        self.commentLabelHC.constant = height + 1.0f;
-//        
-//        // Width
-//        self.commentLabel.preferredMaxLayoutWidth = width;
-
         CGSize avatarSize = [self jsq_avatarSizeForIndexPath:indexPath];
 
         //  from the cell xibs, there is a 2 point space between avatar and bubble
