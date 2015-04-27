@@ -97,7 +97,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jgD-oY-7Rz">
-                        <rect key="frame" x="266" y="57" width="40" height="40"/>
+                        <rect key="frame" x="280" y="57" width="40" height="40"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="1tr-vl-QbA"/>
                             <constraint firstAttribute="height" constant="40" id="WGa-Vd-dcI"/>
@@ -107,7 +107,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="jgD-oY-7Rz" secondAttribute="trailing" constant="14" id="6ia-me-0OM"/>
+                <constraint firstAttribute="trailing" secondItem="jgD-oY-7Rz" secondAttribute="trailing" id="6ia-me-0OM"/>
                 <constraint firstItem="aNb-6b-W2u" firstAttribute="top" secondItem="MSa-s2-dC5" secondAttribute="bottom" id="6xh-5i-STW"/>
                 <constraint firstAttribute="bottom" secondItem="aNb-6b-W2u" secondAttribute="bottom" id="887-yF-AiL"/>
                 <constraint firstItem="ECD-Vq-pnm" firstAttribute="top" secondItem="WL8-H2-zKl" secondAttribute="bottom" id="G3B-to-E2O"/>
