@@ -87,7 +87,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNb-6b-W2u" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="134" width="320" height="20"/>
+                        <rect key="frame" x="36" y="134" width="284" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="7wZ-tU-BkD"/>
@@ -109,6 +109,7 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jgD-oY-7Rz" secondAttribute="trailing" id="6ia-me-0OM"/>
                 <constraint firstItem="aNb-6b-W2u" firstAttribute="top" secondItem="MSa-s2-dC5" secondAttribute="bottom" id="6xh-5i-STW"/>
+                <constraint firstItem="aNb-6b-W2u" firstAttribute="leading" secondItem="MSa-s2-dC5" secondAttribute="leading" id="7UD-O2-ewk"/>
                 <constraint firstAttribute="bottom" secondItem="aNb-6b-W2u" secondAttribute="bottom" id="887-yF-AiL"/>
                 <constraint firstItem="ECD-Vq-pnm" firstAttribute="top" secondItem="WL8-H2-zKl" secondAttribute="bottom" id="G3B-to-E2O"/>
                 <constraint firstItem="bm9-kp-w5x" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="Q90-uK-6PT"/>
@@ -121,7 +122,6 @@
                 <constraint firstItem="WL8-H2-zKl" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="kDq-rn-WOo"/>
                 <constraint firstAttribute="centerY" secondItem="jgD-oY-7Rz" secondAttribute="centerY" id="pES-Dg-If3"/>
                 <constraint firstItem="aNb-6b-W2u" firstAttribute="top" secondItem="bm9-kp-w5x" secondAttribute="bottom" id="q4S-QO-Sf2"/>
-                <constraint firstItem="aNb-6b-W2u" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="qph-tM-KCH"/>
                 <constraint firstAttribute="trailing" secondItem="WL8-H2-zKl" secondAttribute="trailing" id="tSU-YD-17i"/>
             </constraints>
             <size key="customSize" width="317" height="245"/>

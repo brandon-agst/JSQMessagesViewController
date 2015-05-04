@@ -87,7 +87,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFM-SS-blZ" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="134" width="320" height="20"/>
+                        <rect key="frame" x="0.0" y="134" width="284" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Crl-OT-vNM"/>
@@ -110,6 +110,7 @@
                 <constraint firstAttribute="trailing" secondItem="SsO-gk-CMC" secondAttribute="trailing" id="2I3-0E-Qd5"/>
                 <constraint firstItem="SsO-gk-CMC" firstAttribute="leading" secondItem="3BN-nT-5Sf" secondAttribute="leading" id="6tE-eg-bk9"/>
                 <constraint firstAttribute="bottom" secondItem="CFM-SS-blZ" secondAttribute="bottom" id="Ap6-hc-1OW"/>
+                <constraint firstItem="CFM-SS-blZ" firstAttribute="trailing" secondItem="u7H-At-ayh" secondAttribute="trailing" id="FM3-zX-E2S"/>
                 <constraint firstItem="CFM-SS-blZ" firstAttribute="top" secondItem="u7H-At-ayh" secondAttribute="bottom" id="Fhf-MY-n6C"/>
                 <constraint firstItem="d4r-gK-QNo" firstAttribute="leading" secondItem="3BN-nT-5Sf" secondAttribute="leading" id="Gd7-4b-O42"/>
                 <constraint firstItem="u7H-At-ayh" firstAttribute="top" secondItem="hba-FW-oeJ" secondAttribute="bottom" id="HmL-Fk-pKF"/>
@@ -118,7 +119,6 @@
                 <constraint firstItem="CFM-SS-blZ" firstAttribute="leading" secondItem="3BN-nT-5Sf" secondAttribute="leading" id="UG4-F1-0ka"/>
                 <constraint firstItem="SsO-gk-CMC" firstAttribute="top" secondItem="3BN-nT-5Sf" secondAttribute="top" id="Vs2-AW-RW6"/>
                 <constraint firstAttribute="trailing" secondItem="hba-FW-oeJ" secondAttribute="trailing" id="iyk-9g-xa3"/>
-                <constraint firstAttribute="trailing" secondItem="CFM-SS-blZ" secondAttribute="trailing" id="k4p-0s-fS5"/>
                 <constraint firstAttribute="centerY" secondItem="d4r-gK-QNo" secondAttribute="centerY" id="kXd-cc-hwG"/>
                 <constraint firstItem="hba-FW-oeJ" firstAttribute="leading" secondItem="3BN-nT-5Sf" secondAttribute="leading" id="kmz-Gm-wck"/>
                 <constraint firstItem="hba-FW-oeJ" firstAttribute="top" secondItem="SsO-gk-CMC" secondAttribute="bottom" id="nQu-ee-7zN"/>

@@ -78,7 +78,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UPz-5x-c1T" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="134" width="320" height="20"/>
+                        <rect key="frame" x="36" y="134" width="284" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="xPR-Ph-Ze9"/>
@@ -98,7 +98,6 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
-                <constraint firstItem="UPz-5x-c1T" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="54r-MX-MGW"/>
                 <constraint firstAttribute="trailing" secondItem="UPz-5x-c1T" secondAttribute="trailing" id="G3U-h0-DWS"/>
                 <constraint firstAttribute="centerY" secondItem="mxO-ha-8ot" secondAttribute="centerY" id="Ify-Jc-ULJ"/>
                 <constraint firstAttribute="trailing" secondItem="afj-rd-iNv" secondAttribute="trailing" id="Ka4-Dy-jCS"/>
@@ -112,6 +111,7 @@
                 <constraint firstItem="btS-p8-B7Z" firstAttribute="leading" secondItem="Da1-09-wR4" secondAttribute="trailing" constant="2" id="j0I-pm-eex"/>
                 <constraint firstItem="btS-p8-B7Z" firstAttribute="top" secondItem="Ufa-bF-l1Y" secondAttribute="bottom" id="jAu-Dn-7rN"/>
                 <constraint firstItem="Da1-09-wR4" firstAttribute="leading" secondItem="4lh-CK-yVn" secondAttribute="leading" id="jiu-B4-TSD"/>
+                <constraint firstItem="btS-p8-B7Z" firstAttribute="leading" secondItem="UPz-5x-c1T" secondAttribute="leading" id="kT2-OZ-6wC"/>
                 <constraint firstAttribute="bottom" secondItem="UPz-5x-c1T" secondAttribute="bottom" id="nsK-Gh-M3Z"/>
                 <constraint firstItem="UPz-5x-c1T" firstAttribute="top" secondItem="btS-p8-B7Z" secondAttribute="bottom" id="s8G-Je-7GA"/>
             </constraints>
