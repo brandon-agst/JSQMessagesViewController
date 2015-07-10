@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="u7H-At-ayh" userLabel="Bubble container">
-                        <rect key="frame" x="40" y="40" width="244" height="94"/>
+                        <rect key="frame" x="42" y="40" width="244" height="94"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RqP-gB-oXZ" userLabel="Bubble Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="94"/>
@@ -90,7 +90,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CFM-SS-blZ" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="0.0" y="134" width="284" height="20"/>
+                        <rect key="frame" x="0.0" y="134" width="286" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="Crl-OT-vNM"/>
@@ -127,7 +127,7 @@
                 <constraint firstAttribute="centerY" secondItem="d4r-gK-QNo" secondAttribute="centerY" id="kXd-cc-hwG"/>
                 <constraint firstItem="hba-FW-oeJ" firstAttribute="leading" secondItem="3BN-nT-5Sf" secondAttribute="leading" id="kmz-Gm-wck"/>
                 <constraint firstItem="hba-FW-oeJ" firstAttribute="top" secondItem="SsO-gk-CMC" secondAttribute="bottom" id="nQu-ee-7zN"/>
-                <constraint firstItem="hdz-8R-rT1" firstAttribute="leading" secondItem="u7H-At-ayh" secondAttribute="trailing" constant="2" id="xTH-pe-AfB"/>
+                <constraint firstItem="hdz-8R-rT1" firstAttribute="leading" secondItem="u7H-At-ayh" secondAttribute="trailing" id="xTH-pe-AfB"/>
                 <constraint firstAttribute="trailing" secondItem="epy-4u-wCi" secondAttribute="trailing" id="yqD-vU-IID"/>
             </constraints>
             <size key="customSize" width="317" height="245"/>

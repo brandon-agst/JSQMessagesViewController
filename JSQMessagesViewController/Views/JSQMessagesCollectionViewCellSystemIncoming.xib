@@ -38,7 +38,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSa-s2-dC5" userLabel="Bubble container">
-                        <rect key="frame" x="36" y="40" width="244" height="94"/>
+                        <rect key="frame" x="34" y="40" width="244" height="94"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="x9J-qZ-Tud" userLabel="Bubble Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="94"/>
@@ -90,7 +90,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="cell bottom label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aNb-6b-W2u" userLabel="Cell bottom label" customClass="JSQMessagesLabel">
-                        <rect key="frame" x="36" y="134" width="284" height="20"/>
+                        <rect key="frame" x="34" y="134" width="286" height="20"/>
                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="20" id="7wZ-tU-BkD"/>
@@ -123,7 +123,7 @@
                 <constraint firstItem="WL8-H2-zKl" firstAttribute="top" secondItem="w4u-Eq-7Kc" secondAttribute="top" id="aPe-kJ-cXm"/>
                 <constraint firstItem="MSa-s2-dC5" firstAttribute="top" secondItem="ECD-Vq-pnm" secondAttribute="bottom" id="dIJ-w7-iVF"/>
                 <constraint firstItem="s6C-ln-1Cw" firstAttribute="centerY" secondItem="WL8-H2-zKl" secondAttribute="centerY" id="gjk-U5-FKk"/>
-                <constraint firstItem="MSa-s2-dC5" firstAttribute="leading" secondItem="bm9-kp-w5x" secondAttribute="trailing" constant="2" id="iya-S6-GhT"/>
+                <constraint firstItem="MSa-s2-dC5" firstAttribute="leading" secondItem="bm9-kp-w5x" secondAttribute="trailing" id="iya-S6-GhT"/>
                 <constraint firstAttribute="trailing" secondItem="aNb-6b-W2u" secondAttribute="trailing" id="j8i-6J-dNH"/>
                 <constraint firstItem="WL8-H2-zKl" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="kDq-rn-WOo"/>
                 <constraint firstAttribute="centerY" secondItem="jgD-oY-7Rz" secondAttribute="centerY" id="pES-Dg-If3"/>
