@@ -44,13 +44,13 @@
                                 <rect key="frame" x="0.0" y="0.0" width="244" height="94"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eqB-Wj-eDU" customClass="JSQMessagesCellTextView">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="94"/>
+                                <rect key="frame" x="0.0" y="0.0" width="244" height="94"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUS-7e-CZC" customClass="NIAttributedLabel">
-                                <rect key="frame" x="0.0" y="0.0" width="238" height="94"/>
+                                <rect key="frame" x="0.0" y="0.0" width="244" height="94"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -59,7 +59,7 @@
                         <constraints>
                             <constraint firstItem="eqB-Wj-eDU" firstAttribute="top" secondItem="u7H-At-ayh" secondAttribute="top" id="0vJ-yu-ViX"/>
                             <constraint firstAttribute="bottom" secondItem="RqP-gB-oXZ" secondAttribute="bottom" id="2zk-ag-pwf"/>
-                            <constraint firstAttribute="trailing" secondItem="fUS-7e-CZC" secondAttribute="trailing" constant="6" id="G6j-Js-eKB"/>
+                            <constraint firstAttribute="trailing" secondItem="fUS-7e-CZC" secondAttribute="trailing" id="G6j-Js-eKB"/>
                             <constraint firstAttribute="width" constant="244" id="Hrp-46-Wr9"/>
                             <constraint firstAttribute="trailing" secondItem="RqP-gB-oXZ" secondAttribute="trailing" id="KsU-qt-xAO"/>
                             <constraint firstItem="RqP-gB-oXZ" firstAttribute="leading" secondItem="u7H-At-ayh" secondAttribute="leading" id="L9R-dc-zr6"/>
@@ -67,7 +67,7 @@
                             <constraint firstItem="fUS-7e-CZC" firstAttribute="leading" secondItem="u7H-At-ayh" secondAttribute="leading" id="UZb-Rx-pxe"/>
                             <constraint firstAttribute="bottom" secondItem="eqB-Wj-eDU" secondAttribute="bottom" id="XQF-KL-sej"/>
                             <constraint firstItem="eqB-Wj-eDU" firstAttribute="leading" secondItem="u7H-At-ayh" secondAttribute="leading" id="bIL-1d-k6k"/>
-                            <constraint firstAttribute="trailing" secondItem="eqB-Wj-eDU" secondAttribute="trailing" constant="6" id="hYf-Oq-JbC"/>
+                            <constraint firstAttribute="trailing" secondItem="eqB-Wj-eDU" secondAttribute="trailing" id="hYf-Oq-JbC"/>
                             <constraint firstItem="RqP-gB-oXZ" firstAttribute="top" secondItem="u7H-At-ayh" secondAttribute="top" id="lRj-jt-WSS"/>
                             <constraint firstItem="fUS-7e-CZC" firstAttribute="top" secondItem="u7H-At-ayh" secondAttribute="top" id="osr-Ea-QeI"/>
                         </constraints>
