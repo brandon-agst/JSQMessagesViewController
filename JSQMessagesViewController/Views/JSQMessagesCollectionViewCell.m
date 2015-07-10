@@ -175,6 +175,8 @@
     self.agstImageView.hidden = YES;
 
     self.systemMessageLabel.text = nil;
+
+    self.topDividerImageView.hidden = YES;
 }
 
 - (UICollectionViewLayoutAttributes *)preferredLayoutAttributesFittingAttributes:(UICollectionViewLayoutAttributes *)layoutAttributes

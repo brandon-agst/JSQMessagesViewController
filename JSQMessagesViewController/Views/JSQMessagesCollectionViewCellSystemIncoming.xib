@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14E46" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -24,6 +24,9 @@
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_h_stories_bottom_" translatesAutoresizingMaskIntoConstraints="NO" id="s6C-ln-1Cw">
+                        <rect key="frame" x="14" y="10" width="292" height="1"/>
+                    </imageView>
                     <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bubble top label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECD-Vq-pnm" userLabel="Bubble top label" customClass="JSQMessagesLabel">
                         <rect key="frame" x="0.0" y="20" width="320" height="20"/>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -109,14 +112,17 @@
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="jgD-oY-7Rz" secondAttribute="trailing" id="6ia-me-0OM"/>
                 <constraint firstItem="aNb-6b-W2u" firstAttribute="top" secondItem="MSa-s2-dC5" secondAttribute="bottom" id="6xh-5i-STW"/>
+                <constraint firstAttribute="trailing" secondItem="s6C-ln-1Cw" secondAttribute="trailing" constant="14" id="7Gc-nI-vUg"/>
                 <constraint firstItem="aNb-6b-W2u" firstAttribute="leading" secondItem="MSa-s2-dC5" secondAttribute="leading" id="7UD-O2-ewk"/>
                 <constraint firstAttribute="bottom" secondItem="aNb-6b-W2u" secondAttribute="bottom" id="887-yF-AiL"/>
                 <constraint firstItem="ECD-Vq-pnm" firstAttribute="top" secondItem="WL8-H2-zKl" secondAttribute="bottom" id="G3B-to-E2O"/>
                 <constraint firstItem="bm9-kp-w5x" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="Q90-uK-6PT"/>
                 <constraint firstAttribute="trailing" secondItem="ECD-Vq-pnm" secondAttribute="trailing" id="QH0-8M-JVn"/>
                 <constraint firstItem="ECD-Vq-pnm" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="VQV-sh-9hZ"/>
+                <constraint firstItem="s6C-ln-1Cw" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" constant="14" id="YSb-Da-XRJ"/>
                 <constraint firstItem="WL8-H2-zKl" firstAttribute="top" secondItem="w4u-Eq-7Kc" secondAttribute="top" id="aPe-kJ-cXm"/>
                 <constraint firstItem="MSa-s2-dC5" firstAttribute="top" secondItem="ECD-Vq-pnm" secondAttribute="bottom" id="dIJ-w7-iVF"/>
+                <constraint firstItem="s6C-ln-1Cw" firstAttribute="centerY" secondItem="WL8-H2-zKl" secondAttribute="centerY" id="gjk-U5-FKk"/>
                 <constraint firstItem="MSa-s2-dC5" firstAttribute="leading" secondItem="bm9-kp-w5x" secondAttribute="trailing" constant="2" id="iya-S6-GhT"/>
                 <constraint firstAttribute="trailing" secondItem="aNb-6b-W2u" secondAttribute="trailing" id="j8i-6J-dNH"/>
                 <constraint firstItem="WL8-H2-zKl" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="kDq-rn-WOo"/>
@@ -146,8 +152,12 @@
                 <outlet property="textViewBottomVerticalSpaceConstraint" destination="6uU-ct-Z70" id="Dlb-yL-K1r"/>
                 <outlet property="textViewMarginHorizontalSpaceConstraint" destination="GiM-Ap-A9m" id="wvV-oB-Jbf"/>
                 <outlet property="textViewTopVerticalSpaceConstraint" destination="Jp6-Dc-uA6" id="fVq-GL-ENQ"/>
+                <outlet property="topDividerImageView" destination="s6C-ln-1Cw" id="smX-Qa-eMr"/>
             </connections>
             <point key="canvasLocation" x="255" y="202"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="divider_h_stories_bottom_" width="375" height="1"/>
+    </resources>
 </document>

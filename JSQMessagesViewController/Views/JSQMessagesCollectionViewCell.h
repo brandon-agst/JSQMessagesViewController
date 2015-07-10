@@ -83,6 +83,8 @@
 
 @property (nonatomic, weak) IBOutlet NIAttributedLabel *systemMessageLabel;
 
+@property (nonatomic, weak) IBOutlet UIImageView *topDividerImageView;
+
 /**
  *  The object that acts as the delegate for the cell.
  */
