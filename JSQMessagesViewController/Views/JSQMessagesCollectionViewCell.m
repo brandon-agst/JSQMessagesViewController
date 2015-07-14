@@ -19,7 +19,9 @@
 #import "JSQMessagesCollectionViewCell.h"
 
 #import "JSQMessagesCollectionViewCellIncoming.h"
+#import "JSQMessagesCollectionViewCellSystemIncoming.h"
 #import "JSQMessagesCollectionViewCellOutgoing.h"
+#import "JSQMessagesCollectionViewCellSystemOutgoing.h"
 #import "JSQMessagesCollectionViewLayoutAttributes.h"
 
 #import "UIImageView+AFNetworking.h"
@@ -216,10 +218,12 @@
     [self jsq_updateConstraint:self.cellBottomLabelHeightConstraint
                   withConstant:customAttributes.cellBottomLabelHeight];
 
-    if ([self isKindOfClass:[JSQMessagesCollectionViewCellIncoming class]]) {
+    if ([self isKindOfClass:[JSQMessagesCollectionViewCellIncoming class]] ||
+        [self isKindOfClass:[JSQMessagesCollectionViewCellSystemIncoming class]]) {
         self.avatarViewSize = customAttributes.incomingAvatarViewSize;
     }
-    else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]]) {
+    else if ([self isKindOfClass:[JSQMessagesCollectionViewCellOutgoing class]] ||
+             [self isKindOfClass:[JSQMessagesCollectionViewCellSystemOutgoing class]]) {
         self.avatarViewSize = customAttributes.outgoingAvatarViewSize;
     }
 }
