@@ -73,7 +73,7 @@
                         </constraints>
                     </view>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hdz-8R-rT1" userLabel="Avatar container">
-                        <rect key="frame" x="286" y="100" width="34" height="34"/>
+                        <rect key="frame" x="286" y="40" width="34" height="34"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Jv9-Bc-jxc" userLabel="Avatar Image View">
                                 <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
@@ -110,6 +110,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
             <constraints>
+                <constraint firstItem="hdz-8R-rT1" firstAttribute="top" secondItem="hba-FW-oeJ" secondAttribute="bottom" id="0M2-Sm-FzI"/>
                 <constraint firstAttribute="trailing" secondItem="SsO-gk-CMC" secondAttribute="trailing" id="2I3-0E-Qd5"/>
                 <constraint firstItem="SsO-gk-CMC" firstAttribute="leading" secondItem="3BN-nT-5Sf" secondAttribute="leading" id="6tE-eg-bk9"/>
                 <constraint firstItem="epy-4u-wCi" firstAttribute="centerY" secondItem="SsO-gk-CMC" secondAttribute="centerY" id="7hJ-VD-mGj"/>
@@ -119,7 +120,6 @@
                 <constraint firstItem="CFM-SS-blZ" firstAttribute="top" secondItem="u7H-At-ayh" secondAttribute="bottom" id="Fhf-MY-n6C"/>
                 <constraint firstItem="d4r-gK-QNo" firstAttribute="leading" secondItem="3BN-nT-5Sf" secondAttribute="leading" id="Gd7-4b-O42"/>
                 <constraint firstItem="u7H-At-ayh" firstAttribute="top" secondItem="hba-FW-oeJ" secondAttribute="bottom" id="HmL-Fk-pKF"/>
-                <constraint firstItem="CFM-SS-blZ" firstAttribute="top" secondItem="hdz-8R-rT1" secondAttribute="bottom" id="Lh7-Kx-rGN"/>
                 <constraint firstAttribute="trailing" secondItem="hdz-8R-rT1" secondAttribute="trailing" id="S0N-VT-8ey"/>
                 <constraint firstItem="CFM-SS-blZ" firstAttribute="leading" secondItem="3BN-nT-5Sf" secondAttribute="leading" id="UG4-F1-0ka"/>
                 <constraint firstItem="SsO-gk-CMC" firstAttribute="top" secondItem="3BN-nT-5Sf" secondAttribute="top" id="Vs2-AW-RW6"/>
