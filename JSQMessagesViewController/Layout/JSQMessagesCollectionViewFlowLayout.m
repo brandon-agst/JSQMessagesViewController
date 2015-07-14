@@ -559,9 +559,9 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
 {
     id<JSQMessageData> messageData = [self.collectionView.dataSource collectionView:self.collectionView messageDataForItemAtIndexPath:indexPath];
 
-    if ([messageData isSystemMessage]) {
-        return CGSizeZero;
-    } else {
+//    if ([messageData isSystemMessage]) {
+//        return CGSizeZero;
+//    } else {
         NSString *messageSender = [messageData senderId];
        
         if ([messageSender isEqualToString:[self.collectionView.dataSource senderId]]) {
@@ -569,7 +569,7 @@ const CGFloat kJSQMessagesCollectionViewAvatarSizeDefault = 30.0f;
         }
         
         return self.incomingAvatarViewSize;
-    }
+//    }
 }
 
 #pragma mark - Spring behavior utilities
