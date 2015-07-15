@@ -192,4 +192,7 @@
 
 + (NSString *)systemCellReuseIdentifier;
 
+- (void)showAGSTImageView;
+- (void)hideAGSTImageView;
+
 @end

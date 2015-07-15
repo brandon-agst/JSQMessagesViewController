@@ -133,6 +133,7 @@
             <size key="customSize" width="317" height="245"/>
             <connections>
                 <outlet property="agstImageView" destination="jgD-oY-7Rz" id="puX-NR-cli"/>
+                <outlet property="agstImageViewWC" destination="1tr-vl-QbA" id="6ip-Gv-fhJ"/>
                 <outlet property="avatarContainerView" destination="bm9-kp-w5x" id="5tC-9V-VNw"/>
                 <outlet property="avatarContainerViewHeightConstraint" destination="BZj-bA-rbu" id="rCE-pu-nWm"/>
                 <outlet property="avatarContainerViewWidthConstraint" destination="yW4-9h-sJU" id="YSI-n0-eXK"/>

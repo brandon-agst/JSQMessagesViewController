@@ -116,6 +116,10 @@
     _media = nil;
 }
 
+- (BOOL)hasThumbnail {
+    return NO;
+}
+
 - (NSUInteger)messageHash
 {
     return self.hash;

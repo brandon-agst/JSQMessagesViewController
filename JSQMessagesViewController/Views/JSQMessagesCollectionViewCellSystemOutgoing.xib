@@ -133,6 +133,7 @@
             <size key="customSize" width="317" height="245"/>
             <connections>
                 <outlet property="agstImageView" destination="d4r-gK-QNo" id="9Kw-nk-meE"/>
+                <outlet property="agstImageViewWC" destination="ays-wk-xzy" id="PCb-12-sGE"/>
                 <outlet property="avatarContainerView" destination="hdz-8R-rT1" id="7Du-43-TjF"/>
                 <outlet property="avatarContainerViewHeightConstraint" destination="4La-a3-zE4" id="Dl9-G2-LeP"/>
                 <outlet property="avatarContainerViewWidthConstraint" destination="Xdn-Pf-e2L" id="zOq-fZ-rNE"/>

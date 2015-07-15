@@ -39,6 +39,8 @@
 
 - (BOOL)isSystemMessage;
 
+- (BOOL)hasThumbnail;
+
 /**
  *  @return A string identifier that uniquely identifies the user who sent the message.
  *

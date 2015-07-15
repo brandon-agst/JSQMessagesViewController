@@ -42,6 +42,8 @@
 @property (weak, nonatomic) IBOutlet UIImageView *avatarImageView;
 @property (weak, nonatomic) IBOutlet UIView *avatarContainerView;
 
+@property (nonatomic, weak) IBOutlet NSLayoutConstraint *agstImageViewWC;
+
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *messageBubbleContainerWidthConstraint;
 
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *textViewTopVerticalSpaceConstraint;
@@ -56,9 +58,13 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewWidthConstraint;
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *avatarContainerViewHeightConstraint;
 
+@property (nonatomic, assign) BOOL showThumbnail;
+
 @property (assign, nonatomic) UIEdgeInsets textViewFrameInsets;
 
 @property (assign, nonatomic) CGSize avatarViewSize;
+
+@property (nonatomic, assign) CGFloat agstImageViewWCDefaultConstant;
 
 @property (weak, nonatomic, readwrite) UITapGestureRecognizer *tapGestureRecognizer;
 @property (weak, nonatomic, readwrite) UITapGestureRecognizer *agstImageViewTapGestureRecognizer;
@@ -101,9 +107,13 @@
 {
     [super awakeFromNib];
 
+    _showThumbnail = YES;
+
     [self setTranslatesAutoresizingMaskIntoConstraints:NO];
 
     self.backgroundColor = [UIColor whiteColor];
+
+    self.agstImageViewWCDefaultConstant = self.agstImageViewWC.constant;
 
     self.cellTopLabelHeightConstraint.constant = 0.0f;
     self.messageBubbleTopLabelHeightConstraint.constant = 0.0f;
@@ -153,6 +163,30 @@
 
     [_agstImageViewTapGestureRecognizer removeTarget:nil action:NULL];
     _agstImageViewTapGestureRecognizer = nil;
+}
+
+- (void)showAGSTImageView {
+    if (self.showThumbnail)
+        return;
+
+    self.agstImageViewWC.constant = self.agstImageViewWCDefaultConstant;
+
+    [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
+                  withConstant:self.messageBubbleContainerWidthConstraint.constant - self.agstImageViewWCDefaultConstant];
+
+    self.showThumbnail = YES;
+}
+
+- (void)hideAGSTImageView {
+    if (!self.showThumbnail)
+        return;
+
+    self.agstImageViewWC.constant = 0.0;
+
+    [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
+                  withConstant:self.messageBubbleContainerWidthConstraint.constant + self.agstImageViewWCDefaultConstant];
+
+    self.showThumbnail = NO;
 }
 
 #pragma mark - Collection view cell
@@ -206,8 +240,13 @@
 
     self.textViewFrameInsets = customAttributes.textViewFrameInsets;
 
-    [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
-                  withConstant:customAttributes.messageBubbleContainerViewWidth];
+    if (self.showThumbnail) {
+        [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
+                      withConstant:customAttributes.messageBubbleContainerViewWidth];
+    } else {
+        [self jsq_updateConstraint:self.messageBubbleContainerWidthConstraint
+                      withConstant:customAttributes.messageBubbleContainerViewWidth + self.agstImageViewWCDefaultConstant];
+    }
 
     [self jsq_updateConstraint:self.cellTopLabelHeightConstraint
                   withConstant:customAttributes.cellTopLabelHeight];
