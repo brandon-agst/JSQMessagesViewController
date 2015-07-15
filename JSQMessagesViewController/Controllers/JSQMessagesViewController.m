@@ -481,7 +481,7 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
     cell.delegate = collectionView;
 
     if (isSystemMessage) {
-        cell.systemMessageLabel.text = [messageItem text];
+//        cell.systemMessageLabel.text = [messageItem text];
     }
     else if (!isMediaMessage) {
         cell.textView.text = [messageItem text];
