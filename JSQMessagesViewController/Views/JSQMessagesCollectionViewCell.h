@@ -81,6 +81,8 @@
 
 @property (nonatomic, weak) IBOutlet UIImageView *agstImageView;
 
+@property (nonatomic, weak) IBOutlet UIButton *followButton;
+
 @property (nonatomic, weak) IBOutlet NIAttributedLabel *systemMessageLabel;
 
 @property (nonatomic, weak) IBOutlet UIImageView *topDividerImageView;
@@ -194,5 +196,7 @@
 
 - (void)showAGSTImageView;
 - (void)hideAGSTImageView;
+
+- (void)showFollowButtonForRemoteUserID:(NSString *)userID initializeWithFollowing:(BOOL)following;
 
 @end

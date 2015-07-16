@@ -28,6 +28,8 @@
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
 
+static NSString * const kFollowImageName = @"icon_follow_small_";
+static NSString * const kFollowingImageName = @"icon_following_small_";
 
 @interface JSQMessagesCollectionViewCell () <UIGestureRecognizerDelegate>
 
@@ -68,6 +70,9 @@
 
 @property (weak, nonatomic, readwrite) UITapGestureRecognizer *tapGestureRecognizer;
 @property (weak, nonatomic, readwrite) UITapGestureRecognizer *agstImageViewTapGestureRecognizer;
+
+@property (nonatomic, copy) NSString *remoteUserID;
+@property (nonatomic, copy) NSNumber *followingRemoteUser;
 
 - (void)jsq_handleTapGesture:(UITapGestureRecognizer *)tap;
 
@@ -189,6 +194,75 @@
     self.showThumbnail = NO;
 }
 
+- (void)showFollowButtonForRemoteUserID:(NSString *)userID initializeWithFollowing:(BOOL)following {
+    [self showAGSTImageView];
+    self.agstImageView.hidden = YES;
+
+    self.remoteUserID = userID;
+    self.followingRemoteUser = @(following);
+
+    self.followButton.hidden = NO;
+}
+
+#pragma mark - Actions
+
+- (IBAction)didTapFollowButton:(id)sender {
+//    if (!self.remoteUser)
+//        return;
+//
+//    AGSTUser *remoteUser = self.remoteUser;
+//    BOOL cachedValue = self.remoteUser.following.isFollowing;
+//    AGSTGenericResultBlock completion = ^(id responseObject, NSError *error) {
+//        if (error) {
+//            remoteUser.following.isFollowing = cachedValue;
+//        }
+//    };
+//
+//    if (remoteUser.following.isFollowing) {
+//        // Unfollow
+//        [[AGSTHTTPSessionManager sharedManager]
+//         unfollowUser:remoteUser
+//         withStreamType:AGSTStreamTypeAll
+//         completionBlock:completion];
+//    } else {
+//        // Follow
+//        [[AGSTHTTPSessionManager sharedManager]
+//         followUsersWithIDs:@[ remoteUser.uid ]
+//         completionBlock:completion];
+//    }
+//
+//    remoteUser.following.isFollowing = !remoteUser.following.isFollowing;
+}
+
+#pragma mark - KVO
+
+- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
+    if (object == self) {
+        if ([keyPath isEqualToString:NSStringFromSelector(@selector(followingRemoteUser))]) {
+            NSNumber *newValue = change[NSKeyValueChangeNewKey];
+            if (newValue && newValue != (id)[NSNull null] && newValue.boolValue) {
+                [self.followButton setImage:[UIImage imageNamed:kFollowingImageName]
+                                   forState:UIControlStateNormal];
+            } else {
+                [self.followButton setImage:[UIImage imageNamed:kFollowImageName]
+                                   forState:UIControlStateNormal];
+            }
+        }
+    }
+}
+
+- (void)registerUIObservers {
+    [self addObserver:self
+           forKeyPath:NSStringFromSelector(@selector(followingRemoteUser))
+              options:NSKeyValueObservingOptionInitial | NSKeyValueObservingOptionNew
+              context:NULL];
+}
+
+- (void)removeUIObservers {
+    [self removeObserver:self
+              forKeyPath:NSStringFromSelector(@selector(followingRemoteUser))];
+}
+
 #pragma mark - Collection view cell
 
 - (void)prepareForReuse
@@ -209,6 +283,12 @@
     [self.agstImageView cancelImageRequestOperation];
     self.agstImageView.image = nil;
     self.agstImageView.hidden = YES;
+    self.showThumbnail = NO;
+
+
+    self.followButton.hidden = YES;
+    self.remoteUserID = nil;
+    self.followingRemoteUser = nil;
 
     self.systemMessageLabel.text = nil;
 

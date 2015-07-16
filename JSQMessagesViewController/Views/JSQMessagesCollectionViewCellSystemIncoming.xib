@@ -21,7 +21,7 @@
                             <constraint firstAttribute="height" constant="20" id="1cd-0A-TRZ"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="divider_h_stories_bottom_" translatesAutoresizingMaskIntoConstraints="NO" id="s6C-ln-1Cw">
@@ -34,7 +34,7 @@
                             <constraint firstAttribute="height" constant="20" id="4eb-Kc-EJL"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MSa-s2-dC5" userLabel="Bubble container">
@@ -45,7 +45,7 @@
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tRw-ZC-y4Q" customClass="JSQMessagesCellTextView">
                                 <rect key="frame" x="6" y="0.0" width="238" height="94"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
@@ -96,7 +96,7 @@
                             <constraint firstAttribute="height" constant="20" id="7wZ-tU-BkD"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jgD-oY-7Rz">
@@ -106,6 +106,15 @@
                             <constraint firstAttribute="height" constant="40" id="WGa-Vd-dcI"/>
                         </constraints>
                     </imageView>
+                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ynn-0Q-lVp">
+                        <rect key="frame" x="281" y="48" width="39" height="25"/>
+                        <state key="normal" image="icon_follow_small_">
+                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="didTapFollowButton:" destination="w4u-Eq-7Kc" eventType="touchUpInside" id="gwI-BI-h4L"/>
+                        </connections>
+                    </button>
                 </subviews>
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             </view>
@@ -123,11 +132,13 @@
                 <constraint firstItem="s6C-ln-1Cw" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="YSb-Da-XRJ"/>
                 <constraint firstItem="WL8-H2-zKl" firstAttribute="top" secondItem="w4u-Eq-7Kc" secondAttribute="top" id="aPe-kJ-cXm"/>
                 <constraint firstItem="MSa-s2-dC5" firstAttribute="top" secondItem="ECD-Vq-pnm" secondAttribute="bottom" id="dIJ-w7-iVF"/>
+                <constraint firstItem="Ynn-0Q-lVp" firstAttribute="centerY" secondItem="jgD-oY-7Rz" secondAttribute="centerY" id="dYg-4s-TBn"/>
                 <constraint firstItem="s6C-ln-1Cw" firstAttribute="centerY" secondItem="WL8-H2-zKl" secondAttribute="centerY" constant="-4" id="gjk-U5-FKk"/>
                 <constraint firstItem="jgD-oY-7Rz" firstAttribute="top" secondItem="ECD-Vq-pnm" secondAttribute="bottom" id="hwR-YC-bU2"/>
                 <constraint firstItem="MSa-s2-dC5" firstAttribute="leading" secondItem="bm9-kp-w5x" secondAttribute="trailing" constant="2" id="iya-S6-GhT"/>
                 <constraint firstAttribute="trailing" secondItem="aNb-6b-W2u" secondAttribute="trailing" id="j8i-6J-dNH"/>
                 <constraint firstItem="WL8-H2-zKl" firstAttribute="leading" secondItem="w4u-Eq-7Kc" secondAttribute="leading" id="kDq-rn-WOo"/>
+                <constraint firstItem="Ynn-0Q-lVp" firstAttribute="centerX" secondItem="jgD-oY-7Rz" secondAttribute="centerX" id="nko-i4-Umn"/>
                 <constraint firstAttribute="trailing" secondItem="WL8-H2-zKl" secondAttribute="trailing" id="tSU-YD-17i"/>
             </constraints>
             <size key="customSize" width="317" height="245"/>
@@ -142,6 +153,7 @@
                 <outlet property="cellBottomLabelHeightConstraint" destination="7wZ-tU-BkD" id="UCU-Kv-4Qg"/>
                 <outlet property="cellTopLabel" destination="WL8-H2-zKl" id="8Lw-ah-zI3"/>
                 <outlet property="cellTopLabelHeightConstraint" destination="1cd-0A-TRZ" id="rQY-xR-UPm"/>
+                <outlet property="followButton" destination="Ynn-0Q-lVp" id="775-0o-Cig"/>
                 <outlet property="messageBubbleContainerView" destination="MSa-s2-dC5" id="Rpx-7Q-2ny"/>
                 <outlet property="messageBubbleContainerWidthConstraint" destination="ALJ-v6-aKI" id="nWf-pF-jQd"/>
                 <outlet property="messageBubbleImageView" destination="x9J-qZ-Tud" id="h4z-C4-1TD"/>
@@ -160,5 +172,6 @@
     </objects>
     <resources>
         <image name="divider_h_stories_bottom_" width="375" height="1"/>
+        <image name="icon_follow_small_" width="39" height="25"/>
     </resources>
 </document>
