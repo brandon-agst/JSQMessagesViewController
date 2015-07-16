@@ -283,8 +283,6 @@ static NSString * const kFollowingImageName = @"icon_following_small_";
     [self.agstImageView cancelImageRequestOperation];
     self.agstImageView.image = nil;
     self.agstImageView.hidden = YES;
-    self.showThumbnail = NO;
-
 
     self.followButton.hidden = YES;
     self.remoteUserID = nil;
