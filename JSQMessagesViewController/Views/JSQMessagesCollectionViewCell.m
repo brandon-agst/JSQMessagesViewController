@@ -409,7 +409,8 @@
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
     CGPoint touchPt = [touch locationInView:self];
 
-    if (self.systemMessageLabel.text.length) {
+    if (self.systemMessageLabel.text.length ||
+        self.systemMessageLabel.attributedText.length) {
         CGRect modifiedRect = [self convertRect:self.systemMessageLabel.frame
                                        fromView:self.systemMessageLabel.superview];
         if (CGRectContainsPoint(modifiedRect, touchPt))
