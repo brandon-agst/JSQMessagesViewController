@@ -24,6 +24,11 @@
 #import "JSQMessagesCollectionViewCellSystemOutgoing.h"
 #import "JSQMessagesCollectionViewLayoutAttributes.h"
 
+// woe is me, this should not be here, but this thing is hacked to bits trying to cram these customizations in...
+#import "AGSTHTTPSessionManager.h"
+#import "AGSTMedia.h"
+#import "AGSTUser.h"
+
 #import "UIImageView+AFNetworking.h"
 #import "UIView+JSQMessages.h"
 #import "UIDevice+JSQMessages.h"
@@ -211,31 +216,34 @@ static NSString * const kFollowingImageName = @"icon_following_small_";
 #pragma mark - Actions
 
 - (IBAction)didTapFollowButton:(id)sender {
-//    if (!self.remoteUser)
-//        return;
-//
-//    AGSTUser *remoteUser = self.remoteUser;
-//    BOOL cachedValue = self.remoteUser.following.isFollowing;
-//    AGSTGenericResultBlock completion = ^(id responseObject, NSError *error) {
-//        if (error) {
-//            remoteUser.following.isFollowing = cachedValue;
-//        }
-//    };
-//
-//    if (remoteUser.following.isFollowing) {
-//        // Unfollow
-//        [[AGSTHTTPSessionManager sharedManager]
-//         unfollowUser:remoteUser
-//         withStreamType:AGSTStreamTypeAll
-//         completionBlock:completion];
-//    } else {
-//        // Follow
-//        [[AGSTHTTPSessionManager sharedManager]
-//         followUsersWithIDs:@[ remoteUser.uid ]
-//         completionBlock:completion];
-//    }
-//
-//    remoteUser.following.isFollowing = !remoteUser.following.isFollowing;
+    if (!self.remoteUserID)
+        return;
+
+    AGSTUser *remoteUser = [[AGSTUser alloc] init];
+    remoteUser.uid = self.remoteUserID;
+    BOOL cachedValue = self.followingRemoteUser.boolValue;
+    NSString *cachedRemoteUserID = [self.remoteUserID copy];
+    __weak typeof(self) weakSelf;
+    AGSTGenericResultBlock completion = ^(id responseObject, NSError *error) {
+        if (error && [weakSelf.remoteUserID isEqualToString:cachedRemoteUserID]) {
+            weakSelf.followingRemoteUser = @(cachedValue);
+        }
+    };
+
+    if (self.followingRemoteUser.boolValue) {
+        // Unfollow
+        [[AGSTHTTPSessionManager sharedManager]
+         unfollowUser:remoteUser
+         withStreamType:AGSTStreamTypeAll
+         completionBlock:completion];
+    } else {
+        // Follow
+        [[AGSTHTTPSessionManager sharedManager]
+         followUsersWithIDs:@[ remoteUser.uid ]
+         completionBlock:completion];
+    }
+
+    self.followingRemoteUser = @(!self.followingRemoteUser.boolValue);
 }
 
 #pragma mark - KVO
