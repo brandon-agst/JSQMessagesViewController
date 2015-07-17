@@ -147,10 +147,14 @@ static NSString * const kFollowingImageName = @"icon_following_small_";
     self.agstImageView.userInteractionEnabled = YES;
     [self.agstImageView addGestureRecognizer:agstTap];
     self.agstImageViewTapGestureRecognizer = agstTap;
+
+    [self registerUIObservers];
 }
 
 - (void)dealloc
 {
+    [self removeUIObservers];
+
     _delegate = nil;
 
     _cellTopLabel = nil;
