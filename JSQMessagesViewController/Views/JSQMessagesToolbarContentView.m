@@ -62,6 +62,8 @@ const CGFloat kJSQMessagesToolbarContentViewRightHorizontalSpacingDefault = 0.0f
     self.leftHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewLeftHorizontalSpacingDefault;
     self.rightHorizontalSpacingConstraint.constant = kJSQMessagesToolbarContentViewRightHorizontalSpacingDefault;
 
+    self.textView.textContainerInset = UIEdgeInsetsMake(4.0, 6.0, 4.0, 6.0);
+
     self.backgroundColor = [UIColor clearColor];
 }
 
