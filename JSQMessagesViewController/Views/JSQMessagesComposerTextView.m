@@ -166,8 +166,15 @@
     
     if ([self.text length] == 0 && self.placeHolder) {
         [self.placeHolderTextColor set];
-        
-        [self.placeHolder drawInRect:CGRectInset(rect, 7.0f, 5.0f + 6.0f)
+
+        CGFloat horizontalMargin = 7.0;
+        CGFloat topMargin = 9.0;
+        CGFloat bottomMargin = 2.0;
+        CGRect drawRect = CGRectMake(rect.origin.x + horizontalMargin,
+                                     rect.origin.y + topMargin,
+                                     rect.size.width - 2.0 * horizontalMargin,
+                                     rect.size.height - topMargin - bottomMargin);
+        [self.placeHolder drawInRect:drawRect
                       withAttributes:[self jsq_placeholderTextAttributes]];
     }
 }
