@@ -880,7 +880,8 @@ static void * kJSQMessagesKeyValueObservingContext = &kJSQMessagesKeyValueObserv
 
 - (BOOL)jsq_inputToolbarHasReachedMaximumHeight
 {
-    return CGRectGetMinY(self.inputToolbar.frame) == (self.topLayoutGuide.length + self.topContentAdditionalInset);
+    return (CGRectGetMinY(self.inputToolbar.frame) == (self.topLayoutGuide.length + self.topContentAdditionalInset) ||
+            self.inputToolbar.frame.size.height > 96.0); // very hacky :(
 }
 
 - (void)jsq_adjustInputToolbarForComposerTextViewContentSizeChange:(CGFloat)dy
