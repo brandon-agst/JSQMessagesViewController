@@ -20,6 +20,7 @@
 #import "JSQMessagesLoadEarlierHeaderView.h"
 
 #import "NSBundle+JSQMessages.h"
+#import "UIImageView+AGSTExtensions.h"
 
 
 const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
@@ -28,6 +29,7 @@ const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
 @interface JSQMessagesLoadEarlierHeaderView ()
 
 @property (weak, nonatomic) IBOutlet UIButton *loadButton;
+@property (nonatomic, weak) IBOutlet UIImageView *spinnerImageView;
 
 - (IBAction)loadButtonPressed:(UIButton *)sender;
 

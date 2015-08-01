@@ -24,18 +24,27 @@
                         <action selector="loadButtonPressed:" destination="0Ms-a6-YUP" eventType="touchUpInside" id="TLB-Fi-7pI"/>
                     </connections>
                 </button>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="spinner_grey_small_" translatesAutoresizingMaskIntoConstraints="NO" id="TDw-Qn-ShT">
+                    <rect key="frame" x="147" y="3" width="27" height="27"/>
+                </imageView>
             </subviews>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="kM4-IZ-dgW" secondAttribute="bottom" id="HWq-c5-fxo"/>
+                <constraint firstAttribute="centerY" secondItem="TDw-Qn-ShT" secondAttribute="centerY" id="NUd-XW-fuR"/>
                 <constraint firstItem="kM4-IZ-dgW" firstAttribute="leading" secondItem="0Ms-a6-YUP" secondAttribute="leading" id="OEX-iw-1Sy"/>
                 <constraint firstAttribute="trailing" secondItem="kM4-IZ-dgW" secondAttribute="trailing" id="Ori-kw-SaU"/>
+                <constraint firstAttribute="centerX" secondItem="TDw-Qn-ShT" secondAttribute="centerX" id="ole-Xt-hCg"/>
                 <constraint firstItem="kM4-IZ-dgW" firstAttribute="top" secondItem="0Ms-a6-YUP" secondAttribute="top" id="zUW-1v-N5P"/>
             </constraints>
             <connections>
                 <outlet property="loadButton" destination="kM4-IZ-dgW" id="86m-Lw-zNd"/>
+                <outlet property="spinnerImageView" destination="TDw-Qn-ShT" id="vul-Fh-2Ua"/>
             </connections>
         </collectionReusableView>
     </objects>
+    <resources>
+        <image name="spinner_grey_small_" width="27" height="27"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

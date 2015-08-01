@@ -20,6 +20,8 @@
 
 @class JSQMessagesLoadEarlierHeaderView;
 
+@property (nonatomic, assign) void *loadingSpinnerContext;
+
 /**
  *  A constant defining the default height of a `JSQMessagesLoadEarlierHeaderView`.
  */
