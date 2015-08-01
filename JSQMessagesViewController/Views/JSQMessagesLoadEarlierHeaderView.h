@@ -18,6 +18,10 @@
 
 #import <UIKit/UIKit.h>
 
+extern NSString * JSQMessagesLoadEarlierHeaderViewToggleActivitNotification;
+extern NSString * JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationStateKey; // NSNumber wrapping BOOL
+extern NSString * JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationContextKey; // NSValue wrapping void *
+
 @class JSQMessagesLoadEarlierHeaderView;
 
 /**

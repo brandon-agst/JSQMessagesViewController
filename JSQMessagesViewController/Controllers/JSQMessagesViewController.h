@@ -195,6 +195,8 @@
  */
 + (instancetype)messagesViewController;
 
+- (void)hideLoadingSpinner;
+
 #pragma mark - Messages view controller
 
 /**

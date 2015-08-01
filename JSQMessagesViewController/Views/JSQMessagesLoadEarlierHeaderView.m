@@ -22,6 +22,9 @@
 #import "NSBundle+JSQMessages.h"
 #import "UIImageView+AGSTExtensions.h"
 
+NSString * JSQMessagesLoadEarlierHeaderViewToggleActivitNotification = @"JSQMessagesLoadEarlierHeaderViewToggleActivitNotification";
+NSString * JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationStateKey = @"JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationStateKey";
+NSString * JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationContextKey = @"JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationContextKey";
 
 const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
 
@@ -61,14 +64,23 @@ const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
 
     self.backgroundColor = [UIColor clearColor];
 
+    [self.spinnerImageView addSpinnerAnimation];
+
     [self.loadButton setTitle:[NSBundle jsq_localizedStringForKey:@"load_earlier_messages"] forState:UIControlStateNormal];
 //    self.loadButton.titleLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
+
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(handleLoadingSpinnerStateNotification:)
+                                                 name:JSQMessagesLoadEarlierHeaderViewToggleActivitNotification
+                                               object:nil];
 }
 
 - (void)dealloc
 {
     _loadButton = nil;
     _delegate = nil;
+
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 #pragma mark - Reusable view
@@ -84,6 +96,19 @@ const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
 - (IBAction)loadButtonPressed:(UIButton *)sender
 {
     [self.delegate headerView:self didPressLoadButton:sender];
+}
+
+- (void)handleLoadingSpinnerStateNotification:(NSNotification *)notification {
+    NSValue *contextValue = notification.userInfo[JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationContextKey];
+    void *context = [contextValue pointerValue];
+
+    if (context == self.loadingSpinnerContext) {
+        NSNumber *state = notification.userInfo[JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationStateKey];
+        BOOL on = state.boolValue;
+
+        self.loadButton.hidden = !on;
+        self.spinnerImageView.hidden = on;
+    }
 }
 
 @end

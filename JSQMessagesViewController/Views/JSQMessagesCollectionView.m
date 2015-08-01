@@ -29,6 +29,7 @@
 
 #import "UIColor+JSQMessages.h"
 
+void * kLoadEarlierMessagesSpinnerContext = &kLoadEarlierMessagesSpinnerContext;
 
 @interface JSQMessagesCollectionView () <JSQMessagesLoadEarlierHeaderViewDelegate>
 
@@ -128,16 +129,37 @@
                                                                              withReuseIdentifier:[JSQMessagesLoadEarlierHeaderView headerReuseIdentifier]
                                                                                     forIndexPath:indexPath];
 
+    headerView.loadingSpinnerContext = kLoadEarlierMessagesSpinnerContext;
     headerView.loadButton.tintColor = self.loadEarlierMessagesHeaderTextColor;
     headerView.delegate = self;
 
     return headerView;
 }
 
+- (void)toggleLoadingSpinner:(BOOL)show {
+    if (show) {
+        [[NSNotificationCenter defaultCenter] postNotificationName:JSQMessagesLoadEarlierHeaderViewToggleActivitNotification
+                                                            object:nil
+                                                          userInfo:@{
+                                                                     JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationContextKey: [NSValue valueWithPointer:kLoadEarlierMessagesSpinnerContext],
+                                                                     JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationStateKey: @YES
+                                                                     }];
+    } else {
+        [[NSNotificationCenter defaultCenter] postNotificationName:JSQMessagesLoadEarlierHeaderViewToggleActivitNotification
+                                                            object:nil
+                                                          userInfo:@{
+                                                                     JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationContextKey: [NSValue valueWithPointer:kLoadEarlierMessagesSpinnerContext],
+                                                                     JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationStateKey: @NO
+                                                                     }];
+    }
+}
+
 #pragma mark - Load earlier messages header delegate
 
 - (void)headerView:(JSQMessagesLoadEarlierHeaderView *)headerView didPressLoadButton:(UIButton *)sender
 {
+    [self toggleLoadingSpinner:YES];
+
     if ([self.delegate respondsToSelector:@selector(collectionView:header:didTapLoadEarlierMessagesButton:)]) {
         [self.delegate collectionView:self header:headerView didTapLoadEarlierMessagesButton:sender];
     }
