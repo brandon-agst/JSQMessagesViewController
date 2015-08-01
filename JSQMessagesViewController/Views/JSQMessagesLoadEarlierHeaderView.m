@@ -106,8 +106,8 @@ const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight = 32.0f;
         NSNumber *state = notification.userInfo[JSQMessagesLoadEarlierHeaderViewToggleActivityNotificationStateKey];
         BOOL on = state.boolValue;
 
-        self.loadButton.hidden = !on;
-        self.spinnerImageView.hidden = on;
+        self.loadButton.hidden = on;
+        self.spinnerImageView.hidden = !on;
     }
 }
 
