@@ -20,8 +20,6 @@
 
 @class JSQMessagesLoadEarlierHeaderView;
 
-@property (nonatomic, assign) void *loadingSpinnerContext;
-
 /**
  *  A constant defining the default height of a `JSQMessagesLoadEarlierHeaderView`.
  */
@@ -52,6 +50,8 @@ FOUNDATION_EXPORT const CGFloat kJSQMessagesLoadEarlierHeaderViewHeight;
  *  and can be used as a way for the user to load previously sent messages.
  */
 @interface JSQMessagesLoadEarlierHeaderView : UICollectionReusableView
+
+@property (nonatomic, assign) void *loadingSpinnerContext;
 
 /**
  *  The object that acts as the delegate of the header view.
