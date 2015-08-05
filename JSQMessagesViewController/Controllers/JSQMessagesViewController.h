@@ -34,6 +34,8 @@
                                                          JSQMessagesCollectionViewDelegateFlowLayout,
                                                          UITextViewDelegate>
 
+@property (nonatomic, weak) IBOutlet UIImageView *prefetchSpinnerImageView;
+
 /**
  *  Returns the collection view object managed by this view controller. 
  *  This view controller is the collection view's data source and delegate.

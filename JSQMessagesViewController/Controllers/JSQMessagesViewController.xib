@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="collectionView" destination="l9u-2b-4LK" id="bLP-6g-CkO"/>
                 <outlet property="inputToolbar" destination="BoD-Az-3DM" id="w74-g9-1qA"/>
+                <outlet property="prefetchSpinnerImageView" destination="arI-84-2tS" id="C82-Jh-wD6"/>
                 <outlet property="toolbarBottomLayoutGuide" destination="rHs-6q-NX4" id="d6h-iu-VMX"/>
                 <outlet property="toolbarHeightConstraint" destination="HIk-02-qcW" id="jE8-xC-1eD"/>
                 <outlet property="view" destination="mUa-cS-ru4" id="nki-T1-RTI"/>
@@ -32,9 +33,14 @@
                     </constraints>
                     <items/>
                 </toolbar>
+                <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_spinner_" translatesAutoresizingMaskIntoConstraints="NO" id="arI-84-2tS">
+                    <rect key="frame" x="137" y="120" width="46" height="46"/>
+                </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
             <constraints>
+                <constraint firstAttribute="centerX" secondItem="arI-84-2tS" secondAttribute="centerX" id="1Jb-c0-b47"/>
+                <constraint firstItem="arI-84-2tS" firstAttribute="top" secondItem="mUa-cS-ru4" secondAttribute="top" constant="120" id="7aP-EJ-QEe"/>
                 <constraint firstAttribute="trailing" secondItem="BoD-Az-3DM" secondAttribute="trailing" id="7xc-Ha-asg"/>
                 <constraint firstItem="l9u-2b-4LK" firstAttribute="leading" secondItem="mUa-cS-ru4" secondAttribute="leading" id="MmF-oh-Y75"/>
                 <constraint firstAttribute="trailing" secondItem="l9u-2b-4LK" secondAttribute="trailing" id="O9u-TA-A0e"/>
@@ -46,6 +52,9 @@
             <nil key="simulatedStatusBarMetrics"/>
         </view>
     </objects>
+    <resources>
+        <image name="icon_spinner_" width="46" height="46"/>
+    </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
